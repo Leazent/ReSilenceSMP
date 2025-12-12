@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Resilence SMP — Update</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Resilence SMP</h1>
+  <div class="page-title">Update</div>
+  <div class="server-ip">IP: play.resilence.net</div>
+</header>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="information.html">Information</a>
+  <a href="update.html">Update</a>
+  <a href="store.html">Store</a>
+  <a href="support.html">Support</a>
+</nav>
+
+  <div class="container">
+    <!-- FORM NAMA, ADMIN, PAYMENT -->
+    <div class="store-form">
+      <input type="text" id="nickname" class="input-box" placeholder="Masukkan Nickname">
+      <select id="admin" class="input-box">
+        <option value="">Pilih Admin</option>
+        <option value="083817186902">Leazent</option>
+        <option value="085720103106">RyzGanz</option>
+      </select>
+      <select id="payment" class="input-box">
+        <option value="">Pilih Metode Payment</option>
+        <option value="GoPay">GoPay</option>
+        <option value="OVO">OVO</option>
+        <option value="DANA">DANA</option>
+        <option value="Bank Transfer">Bank Transfer</option>
+      </select>
+    </div>
+
+    <!-- GRID PRODUK -->
+    <div class="store-grid">
+      <div class="card">
+        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft" alt="Produk 1">
+        <h3>Angle Particle</h3>
+        <button class="buy-btn" data-product="Produk 1">Buy</button>
+      </div>
+      <div class="card">
+        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft">
+        <h3>Demon Particle</h3>
+        <button class="buy-btn" data-product="Produk 2">Buy</button>
+      </div>
+      <div class="card">
+        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft">
+        <h3>Star Particle</h3>
+        <button class="buy-btn" data-product="Produk 3">Buy</button>
+      </div>
+      <div class="card">
+        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft">
+        <h3>Love Particle</h3>
+        <button class="buy-btn" data-product="Produk 4">Buy</button>
+      </div>
+      <div class="card">
+        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft">
+        <h3>Green Particle</h3>
+        <button class="buy-btn" data-product="Produk 5">Buy</button>
+      </div>
+      <!-- Tambahkan produk lain sesuai kebutuhan -->
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Resilience SMP. All rights reserved.
+  </footer>
+
+  <script>
+    function generateCode(length = 8) {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let code = '';
+      for (let i = 0; i < length; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return code;
+    }
+
+    document.querySelectorAll('.buy-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const nickname = document.getElementById('nickname').value.trim();
+        const admin = document.getElementById('admin').value;
+        const payment = document.getElementById('payment').value;
+        const product = button.dataset.product;
+        const code = generateCode();
+
+        if (!nickname || !admin || !payment) {
+          alert('Silakan isi nickname, pilih admin, dan metode payment terlebih dahulu!');
+          return;
+        }
+
+        const message = `Nickname: ${nickname}%0AProduk: ${product}%0APembayaran: ${payment}%0ACode: ${code}`;
+        const waLink = `https://wa.me/${admin}?text=${message}`;
+        window.open(waLink, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
