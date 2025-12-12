@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="id">
+
+<div class="video-bg">
+  <video autoplay loop muted playsinline>
+    <source src="textures/background.mp4" type="video/mp4">
+  </video>
+</div>
+
 <head>
   <meta charset="UTF-8">
-  <title>Resilence SMP — Update</title>
+  <title>Resilience SMP — Store Update</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-  <h1>Resilence SMP</h1>
-  <div class="page-title">Update</div>
+  <h1>Resilience SMP</h1>
+  <div class="page-title">Store Update</div>
   <div class="server-ip">IP: play.resilence.net</div>
 </header>
 
@@ -21,88 +29,115 @@
   <a href="support.html">Support</a>
 </nav>
 
-  <div class="container">
-    <!-- FORM NAMA, ADMIN, PAYMENT -->
-    <div class="store-form">
-      <input type="text" id="nickname" class="input-box" placeholder="Masukkan Nickname">
-      <select id="admin" class="input-box">
-        <option value="">Pilih Admin</option>
-        <option value="+6283817186902">Leazent</option>
-        <option value="+6285720103106">RyzGanz</option>
-      </select>
-      <select id="payment" class="input-box">
-        <option value="">Pilih Metode Payment</option>
-        <option value="GoPay">GoPay</option>
-        <option value="OVO">OVO</option>
-        <option value="DANA">DANA</option>
-        <option value="Bank Transfer">Bank Transfer</option>
-      </select>
-    </div>
+<div class="container">
+  <p>Pembaruan rank, item, dan bug fix.</p>
+  <!-- USER FORM -->
+  <div class="store-form">
+    <input type="text" id="nickname" class="input-box" placeholder="Insert Nickname">
 
-    <!-- GRID PRODUK -->
-    <div class="store-grid">
-      <div class="card">
-        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft" alt="Produk 1">
-        <h3>Angle Particle</h3>
-        <button class="buy-btn" data-product="Produk 1">Buy</button>
-      </div>
-      <div class="card">
-        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft">
-        <h3>Demon Particle</h3>
-        <button class="buy-btn" data-product="Produk 2">Buy</button>
-      </div>
-      <div class="card">
-        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft">
-        <h3>Star Particle</h3>
-        <button class="buy-btn" data-product="Produk 3">Buy</button>
-      </div>
-      <div class="card">
-        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft">
-        <h3>Love Particle</h3>
-        <button class="buy-btn" data-product="Produk 4">Buy</button>
-      </div>
-      <div class="card">
-        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft">
-        <h3>Green Particle</h3>
-        <button class="buy-btn" data-product="Produk 5">Buy</button>
-      </div>
-      <!-- Tambahkan produk lain sesuai kebutuhan -->
-    </div>
+    <select id="admin" class="input-box">
+      <option value="">Select Admin</option>
+      <option value="+6283817186902">Leazent</option>
+      <option value="+6285720103106">RyzGanz</option>
+    </select>
+
+    <select id="payment" class="input-box">
+      <option value="">Payment Method</option>
+      <option value="GoPay">GoPay</option>
+      <option value="OVO">OVO</option>
+      <option value="DANA">DANA</option>
+      <option value="Bank Transfer">Bank Transfer</option>
+    </select>
   </div>
 
-  <footer>
-    &copy; 2025 Resilience SMP. All rights reserved.
-  </footer>
+  <!-- PRODUCTS -->
+  <div class="store-grid">
 
-  <script>
-    function generateCode(length = 8) {
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      let code = '';
-      for (let i = 0; i < length; i++) {
-        code += chars.charAt(Math.floor(Math.random() * chars.length));
+    <div class="card">
+      <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft" alt="Angel Particle">
+      <h3>Angel Particle</h3>
+      <p class="price" data-price="15000">Rp 15.000</p>
+      <button class="buy-btn" data-product="Angel Particle" data-price="15000">Buy</button>
+    </div>
+
+    <div class="card">
+      <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft" alt="Demon Particle">
+      <h3>Demon Particle</h3>
+      <p class="price" data-price="15000">Rp 15.000</p>
+      <button class="buy-btn" data-product="Demon Particle" data-price="15000">Buy</button>
+    </div>
+
+    <div class="card">
+      <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft" alt="Star Particle">
+      <h3>Star Particle</h3>
+      <p class="price" data-price="20000">Rp 20.000</p>
+      <button class="buy-btn" data-product="Star Particle" data-price="20000">Buy</button>
+    </div>
+
+    <div class="card">
+      <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft" alt="Love Particle">
+      <h3>Love Particle</h3>
+      <p class="price" data-price="12000">Rp 12.000</p>
+      <button class="buy-btn" data-product="Love Particle" data-price="12000">Buy</button>
+    </div>
+
+    <div class="card">
+      <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft" alt="Green Particle">
+      <h3>Green Particle</h3>
+      <p class="price" data-price="10000">Rp 10.000</p>
+      <button class="buy-btn" data-product="Green Particle" data-price="10000">Buy</button>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Resilence SMP
+</footer>
+
+<script>
+  function generateCode(length = 8) {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    return Array.from({ length }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
+  }
+
+  function getTodayDate() {
+    const d = new Date();
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const year = d.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
+
+  document.querySelectorAll(".buy-btn").forEach(button => {
+    button.addEventListener("click", () => {
+
+      const nickname = document.getElementById("nickname").value.trim();
+      const admin = document.getElementById("admin").value;
+      const payment = document.getElementById("payment").value;
+      const product = button.dataset.product;
+      const price = button.dataset.price;
+      const code = generateCode();
+      const date = getTodayDate();
+
+      if (!nickname || !admin || !payment) {
+        alert("Silakan isi nickname, pilih admin, dan metode payment terlebih dahulu!");
+        return;
       }
-      return code;
-    }
 
-    document.querySelectorAll('.buy-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const nickname = document.getElementById('nickname').value.trim();
-        const admin = document.getElementById('admin').value;
-        const payment = document.getElementById('payment').value;
-        const product = button.dataset.product;
-        const code = generateCode();
+      const message =
+`Nickname: ${nickname}
+Product: ${product}
+Date: ${date}
+Code: ${code}
+Price: Rp ${price}`;
 
-        if (!nickname || !admin || !payment) {
-          alert('Silakan isi nickname, pilih admin, dan metode payment terlebih dahulu!');
-          return;
-        }
+      const waLink = `https://wa.me/${admin}?text=${encodeURIComponent(message)}`;
+      window.open(waLink, "_blank");
 
-        const message = `Nickname: ${nickname}%0AProduk: ${product}%0APembayaran: ${payment}%0ACode: ${code}`;
-        const waLink = `https://wa.me/${admin}?text=${message}`;
-        window.open(waLink, '_blank');
-      });
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
-
