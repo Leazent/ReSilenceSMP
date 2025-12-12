@@ -23,7 +23,7 @@ body {
 
 @keyframes bgMove {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  50% { background-position: 80% 50%; }
   100% { background-position: 0% 50%; }
 }
 
@@ -264,3 +264,107 @@ footer {
 }
 
 
+/* ===========================
+   MOBILE ULTRA-COMPACT
+=========================== */
+@media (max-width:480px){
+  header {
+    min-height: 120px;
+    padding: 30px 15px;
+  }
+  header h1 { font-size: 20px; }
+  .page-title { font-size: 16px; }
+  nav { gap: 10px; }
+  nav a { font-size: 12px; padding: 6px 10px; }
+  .container { width: 94%; grid-template-columns: 1fr; gap: 18px; }
+  .card { padding: 15px; border-radius: 12px; }
+  .input-box, .select-box { padding: 10px; font-size: 14px; }
+  .store-grid { grid-template-columns: repeat(2,1fr); gap: 14px; }
+  .buy-btn { padding: 8px; font-size: 14px; }
+}
+
+
+/* ===========================
+   TEXTURED UI FOR ALL CARDS
+=========================== */
+.card,
+.store-card {
+  position: relative;
+  overflow: hidden;
+
+  /* texture */
+  background: url("textures/ui-panel.png");
+  background-size: cover;
+  background-position: center;
+
+  border: 1px solid #0a95ff; /* tetap biru */
+  border-radius: 10px;
+  padding: 20px;
+
+  /* efek embun */
+  backdrop-filter: blur(3px);
+}
+
+/* glossy highlight */
+.card::before,
+.store-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom right,
+    rgba(255,255,255,0.20),
+    rgba(255,255,255,0.05)
+  );
+}
+
+/* ===========================
+   INPUTS (NO TEXTURE)
+=========================== */
+.input-box,
+.select-box {
+  background: rgba(0,0,0,0.25);
+  border: 2px solid #0a95ff; /* tetap biru */
+}
+
+/* ===========================
+   2x2 STORE GRID ON MOBILE ONLY
+=========================== */
+@media (max-width:768px){
+  .store-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ===========================
+   GLOBAL VIDEO BACKGROUND
+=========================== */
+.video-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: #000; /* fallback biar tidak ada area kosong */
+}
+
+.video-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* pastikan memenuhi layar tanpa distorsi */
+  object-position: center;
+  filter: brightness(0.35) saturate(1.3);
+}
